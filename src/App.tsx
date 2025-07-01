@@ -5,10 +5,14 @@ import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div className="relative min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Outlet />
-      <div className="absolute bottom-0 right-0 left-0">
+
+      <div className="flex-1 pb-20">
+        <Outlet />
+      </div>
+
+      <div className="mt-auto">
         <Footer />
       </div>
     </div>

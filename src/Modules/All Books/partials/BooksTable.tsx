@@ -1,6 +1,5 @@
-import { Edit, Trash2, BookOpen, Calendar, User, Hash } from "lucide-react";
-
 import { Button } from "@/Components/ui/button";
+import { Badge } from "@/Components/ui/badge";
 import {
   Table,
   TableBody,
@@ -9,7 +8,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/Components/ui/table";
-import { Badge } from "@/Components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/Components/ui/card";
+import { Edit, Trash2, BookOpen, Calendar, User, Hash } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -21,14 +27,17 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/Components/ui/alert-dialog";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/Components/ui/card";
-import type { Book } from "@/shared/config/types";
+
+interface Book {
+  author: string;
+  available: boolean;
+  copies: number;
+  createdAt: string;
+  description: string;
+  genre: string;
+  isbn: string;
+  title: string;
+}
 
 interface BooksTableProps {
   books: Book[];
@@ -151,7 +160,7 @@ export default function BooksTable({
       </div>
 
       {/* Mobile Card View */}
-      <div className="block md:hidden space-y-4">
+      <div className="md:hidden space-y-4">
         {books.map((book) => (
           <Card key={book.isbn}>
             <CardHeader className="pb-3">
