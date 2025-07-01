@@ -46,7 +46,7 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-4 mt-8">
+              <div className="flex flex-col space-y-4 mt-8 px-5">
                 <NavLink to="/" className="flex items-center space-x-2 mb-6">
                   <BookOpen className="h-6 w-6 text-primary" />
                   <span className="text-xl font-bold">BookLib</span>
