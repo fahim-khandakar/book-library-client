@@ -3,7 +3,14 @@ import { useState } from "react";
 import { Menu, BookOpen } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
 import { useDispatch } from "react-redux";
 import { setTrue } from "@/Redux/features/slice/BookCreateModalSlice";
 
@@ -59,8 +66,13 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent
               side="left"
-              className="p-4 flex flex-col space-y-4 md:hidden"
+              className="px-4 flex flex-col space-y-4 md:hidden"
             >
+              <SheetHeader>
+                <SheetTitle>Navigation</SheetTitle>
+                <SheetDescription>Select a page to navigate</SheetDescription>
+              </SheetHeader>
+
               {routes.map((route) =>
                 route.handleModalOpen ? (
                   <span

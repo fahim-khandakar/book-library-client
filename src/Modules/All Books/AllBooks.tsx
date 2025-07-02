@@ -5,7 +5,6 @@ import {
 import BooksTable from "./partials/BooksTable";
 import Loading from "@/Components/Loading/Loading";
 import { showToast } from "@/shared/helpers/showToaster";
-import BookCreate from "../Book Create/BookCreate";
 import BookEdit from "../Book Edit/BookEdit";
 
 const AllBooks = () => {
@@ -36,7 +35,6 @@ const AllBooks = () => {
           <BooksTable books={allBooks?.data} onDelete={handleDelete} />
         </div>
       </main>
-      <BookCreate />
       <BookEdit />
     </div>
   );

@@ -15,7 +15,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/Components/ui/card";
-import { Edit, Trash2, BookOpen, Calendar, User, Hash } from "lucide-react";
+import {
+  Edit,
+  Trash2,
+  BookOpen,
+  Calendar,
+  User,
+  Hash,
+  HandHeart,
+} from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -30,6 +38,7 @@ import {
 import type { Book } from "@/shared/config/types";
 import { useDispatch } from "react-redux";
 import { setEditModalTrue } from "@/Redux/features/slice/BookEditModalSlice";
+import { setBorrowModalTrue } from "@/Redux/features/slice/BorrowModalSlice";
 
 interface BooksTableProps {
   books: Book[];
@@ -109,6 +118,14 @@ const BooksTable = ({ books, onDelete }: BooksTableProps) => {
                       <Button
                         variant="outline"
                         size="sm"
+                        onClick={() => dispatch(setBorrowModalTrue(book?._id))}
+                        className="cursor-pointer"
+                      >
+                        <HandHeart className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
                         onClick={() => dispatch(setEditModalTrue(book?._id))}
                         className="cursor-pointer"
                       >
@@ -166,6 +183,14 @@ const BooksTable = ({ books, onDelete }: BooksTableProps) => {
                   </CardDescription>
                 </div>
                 <div className="flex space-x-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => dispatch(setBorrowModalTrue(book?._id))}
+                    className="cursor-pointer"
+                  >
+                    <HandHeart className="h-4 w-4" />
+                  </Button>
                   <Button
                     variant="outline"
                     size="sm"
