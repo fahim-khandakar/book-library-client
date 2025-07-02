@@ -5,6 +5,7 @@ import {
 import BooksTable from "./partials/BooksTable";
 import Loading from "@/Components/Loading/Loading";
 import { showToast } from "@/shared/helpers/showToaster";
+import BookCreate from "../Book Create/BookCreate";
 
 const AllBooks = () => {
   const { data: allBooks, isLoading } = useGetBooksQuery({});
@@ -40,6 +41,7 @@ const AllBooks = () => {
           />
         </div>
       </main>
+      <BookCreate />
     </div>
   );
 };

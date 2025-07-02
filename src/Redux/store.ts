@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import baseApi from "./api/baseApi";
+import bookCreateModalSlice from "./features/slice/BookCreateModalSlice";
 
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
+    bookCreateModal: bookCreateModalSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(baseApi.middleware),
