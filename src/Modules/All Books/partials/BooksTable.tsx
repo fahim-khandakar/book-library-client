@@ -23,6 +23,7 @@ import {
   User,
   Hash,
   HandHeart,
+  Eye,
 } from "lucide-react";
 import {
   AlertDialog,
@@ -39,6 +40,7 @@ import type { Book } from "@/shared/config/types";
 import { useDispatch } from "react-redux";
 import { setEditModalTrue } from "@/Redux/features/slice/BookEditModalSlice";
 import { setBorrowModalTrue } from "@/Redux/features/slice/BorrowModalSlice";
+import { NavLink } from "react-router-dom";
 
 interface BooksTableProps {
   books: Book[];
@@ -115,6 +117,15 @@ const BooksTable = ({ books, onDelete }: BooksTableProps) => {
                   <TableCell>{formatDate(book.createdAt)}</TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end space-x-2">
+                      <NavLink to={`/books/${book?._id}`}>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="cursor-pointer"
+                        >
+                          <Eye className="h-4 w-4" />
+                        </Button>
+                      </NavLink>
                       <Button
                         variant="outline"
                         size="sm"
@@ -183,6 +194,15 @@ const BooksTable = ({ books, onDelete }: BooksTableProps) => {
                   </CardDescription>
                 </div>
                 <div className="flex space-x-2">
+                  <NavLink to={`/books/${book?._id}`}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="cursor-pointer"
+                    >
+                      <Eye className="h-4 w-4" />
+                    </Button>
+                  </NavLink>
                   <Button
                     variant="outline"
                     size="sm"
