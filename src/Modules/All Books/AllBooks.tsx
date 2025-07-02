@@ -3,7 +3,7 @@ import {
   useGetBooksQuery,
 } from "@/Redux/features/api/book";
 import BooksTable from "./partials/BooksTable";
-import Loading from "@/Components/Loading/Loading";
+import Loading from "@/Widgets/Loading/Loading";
 import { showToast } from "@/shared/helpers/showToaster";
 import BookEdit from "../Book Edit/BookEdit";
 

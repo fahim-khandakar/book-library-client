@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Menu, BookOpen } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import { Button } from "../ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../ui/sheet";
+} from "../../components/ui/sheet";
 import { useDispatch } from "react-redux";
 import { setTrue } from "@/Redux/features/slice/BookCreateModalSlice";
 

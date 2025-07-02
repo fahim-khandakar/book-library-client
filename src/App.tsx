@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import Navbar from "./Components/Navbar/Navbar";
-import Footer from "./Components/Footer/Footer";
+import Navbar from "./Widgets/Navbar/Navbar";
+import Footer from "./Widgets/Footer/Footer";
 import BookCreate from "./Modules/Book Create/BookCreate";
 import BorrowCreateModal from "./Modules/Borrow Create/BorrowCreate";
 

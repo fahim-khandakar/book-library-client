@@ -1,5 +1,5 @@
-import { Badge } from "@/Components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/Components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useGetBorrowSummaryQuery } from "@/Redux/features/api/borrow";
 import { BookOpen, Hash } from "lucide-react";
 
