@@ -1,3 +1,4 @@
+import { setTrue } from "@/Redux/features/slice/BookCreateModalSlice";
 import {
   BookOpen,
   Mail,
@@ -7,9 +8,11 @@ import {
   Twitter,
   Instagram,
 } from "lucide-react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 export default function Footer() {
+  const dispatch = useDispatch();
   return (
     <footer className="bg-gray-50 border-t">
       <div className="container mx-auto px-4 py-12">
@@ -36,12 +39,12 @@ export default function Footer() {
               >
                 All Books
               </NavLink>
-              <NavLink
-                to="/add-book"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              <span
+                onClick={() => dispatch(setTrue())}
+                className="block text-sm text-muted-foreground hover:text-primary cursor-pointer transition-colors"
               >
                 Add Book
-              </NavLink>
+              </span>
               <NavLink
                 to="/borrow-summary"
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors"
