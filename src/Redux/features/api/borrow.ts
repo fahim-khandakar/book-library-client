@@ -11,7 +11,7 @@ const BorrowBookApi = baseApi.injectEndpoints({
           body: fullData,
         };
       },
-      invalidatesTags: ["book"],
+      invalidatesTags: ["borrow"],
     }),
     getBorrowSummary: builder.query({
       query: () => {
@@ -19,7 +19,7 @@ const BorrowBookApi = baseApi.injectEndpoints({
           url: "/borrow",
         };
       },
-      providesTags: ["book"],
+      providesTags: ["borrow"],
     }),
   }),
 });

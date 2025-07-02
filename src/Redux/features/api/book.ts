@@ -19,7 +19,7 @@ const BookApi = baseApi.injectEndpoints({
           url: "/books",
         };
       },
-      providesTags: ["book"],
+      providesTags: ["book", "borrow"],
     }),
     getSingleBook: builder.query({
       query: ({ id }) => {
@@ -27,7 +27,7 @@ const BookApi = baseApi.injectEndpoints({
           url: `/books/${id}`,
         };
       },
-      providesTags: ["book"],
+      providesTags: ["book", "borrow"],
     }),
     deleteBook: builder.mutation({
       query: ({ id }) => {
