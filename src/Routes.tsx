@@ -9,11 +9,15 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/books",
+        index: true,
         element: <AllBooks />,
       },
       {
-        path: "/borrow-summary",
+        path: "books",
+        element: <AllBooks />,
+      },
+      {
+        path: "borrow-summary",
         element: <BookSummary />,
       },
     ],

@@ -27,17 +27,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/Components/ui/alert-dialog";
-
-interface Book {
-  author: string;
-  available: boolean;
-  copies: number;
-  createdAt: string;
-  description: string;
-  genre: string;
-  isbn: string;
-  title: string;
-}
+import type { Book } from "@/shared/config/types";
 
 interface BooksTableProps {
   books: Book[];
@@ -122,12 +112,17 @@ export default function BooksTable({
                         variant="outline"
                         size="sm"
                         onClick={() => onEdit(book)}
+                        className="cursor-pointer"
                       >
                         <Edit className="h-4 w-4" />
                       </Button>
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
-                          <Button variant="outline" size="sm">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="cursor-pointer"
+                          >
                             <Trash2 className="h-4 w-4 text-red-500" />
                           </Button>
                         </AlertDialogTrigger>
@@ -142,8 +137,8 @@ export default function BooksTable({
                           <AlertDialogFooter>
                             <AlertDialogCancel>Cancel</AlertDialogCancel>
                             <AlertDialogAction
-                              onClick={() => onDelete(book.isbn)}
-                              className="bg-red-600 hover:bg-red-700"
+                              onClick={() => onDelete(book._id)}
+                              className="bg-red-600 hover:bg-red-700 "
                             >
                               Delete
                             </AlertDialogAction>

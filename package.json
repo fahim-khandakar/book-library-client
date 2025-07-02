@@ -23,6 +23,7 @@
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.3",
+    "react-toastify": "^11.0.5",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11"
   },
@@ -31,6 +32,7 @@
     "@types/node": "^24.0.8",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@types/react-toastify": "^4.0.2",
     "@vitejs/plugin-react": "^4.5.2",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",

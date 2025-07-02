@@ -1,17 +1,20 @@
-import { useGetBooksQuery } from "@/Redux/features/api/book";
+import {
+  useDeleteBookMutation,
+  useGetBooksQuery,
+} from "@/Redux/features/api/book";
 import BooksTable from "./partials/BooksTable";
 import Loading from "@/Components/Loading/Loading";
+import { showToast } from "@/shared/helpers/showToaster";
 
 const AllBooks = () => {
   const { data: allBooks, isLoading } = useGetBooksQuery({});
+  const [deleteBook] = useDeleteBookMutation();
 
-  const handleEdit = () => {
-    console.log("Edit book:");
-    // Add your edit logic here
-  };
+  const handleEdit = () => {};
 
-  const handleDelete = (isbn: string) => {
-    console.log("Delete book with ISBN:", isbn);
+  const handleDelete = async (id: string) => {
+    const result = await deleteBook({ id });
+    showToast(result);
   };
 
   if (isLoading) {
