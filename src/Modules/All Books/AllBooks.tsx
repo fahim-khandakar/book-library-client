@@ -6,12 +6,11 @@ import BooksTable from "./partials/BooksTable";
 import Loading from "@/Components/Loading/Loading";
 import { showToast } from "@/shared/helpers/showToaster";
 import BookCreate from "../Book Create/BookCreate";
+import BookEdit from "../Book Edit/BookEdit";
 
 const AllBooks = () => {
   const { data: allBooks, isLoading } = useGetBooksQuery({});
   const [deleteBook] = useDeleteBookMutation();
-
-  const handleEdit = () => {};
 
   const handleDelete = async (id: string) => {
     const result = await deleteBook({ id });
@@ -34,14 +33,11 @@ const AllBooks = () => {
             </p>
           </div>
 
-          <BooksTable
-            books={allBooks?.data}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-          />
+          <BooksTable books={allBooks?.data} onDelete={handleDelete} />
         </div>
       </main>
       <BookCreate />
+      <BookEdit />
     </div>
   );
 };

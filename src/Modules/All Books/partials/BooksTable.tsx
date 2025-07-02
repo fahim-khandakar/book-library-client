@@ -28,18 +28,16 @@ import {
   AlertDialogTrigger,
 } from "@/Components/ui/alert-dialog";
 import type { Book } from "@/shared/config/types";
+import { useDispatch } from "react-redux";
+import { setEditModalTrue } from "@/Redux/features/slice/BookEditModalSlice";
 
 interface BooksTableProps {
   books: Book[];
-  onEdit: (book: Book) => void;
   onDelete: (isbn: string) => void;
 }
 
-export default function BooksTable({
-  books,
-  onEdit,
-  onDelete,
-}: BooksTableProps) {
+const BooksTable = ({ books, onDelete }: BooksTableProps) => {
+  const dispatch = useDispatch();
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       year: "numeric",
@@ -111,7 +109,7 @@ export default function BooksTable({
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => onEdit(book)}
+                        onClick={() => dispatch(setEditModalTrue(book?._id))}
                         className="cursor-pointer"
                       >
                         <Edit className="h-4 w-4" />
@@ -171,7 +169,7 @@ export default function BooksTable({
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => onEdit(book)}
+                    onClick={() => dispatch(setEditModalTrue(book?._id))}
                   >
                     <Edit className="h-4 w-4" />
                   </Button>
@@ -251,4 +249,6 @@ export default function BooksTable({
       )}
     </div>
   );
-}
+};
+
+export default BooksTable;

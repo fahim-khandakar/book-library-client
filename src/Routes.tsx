@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import AllBooks from "./Modules/All Books/AllBooks";
-import BookSummary from "./Modules/Book Summary/BookSummary";
+import BorrowSummary from "./Modules/Borrow Summary/BorrowSummary";
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "borrow-summary",
-        element: <BookSummary />,
+        element: <BorrowSummary />,
       },
     ],
   },
