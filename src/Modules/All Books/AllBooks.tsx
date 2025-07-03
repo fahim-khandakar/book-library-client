@@ -20,7 +20,6 @@ const AllBooks = () => {
     return <Loading />;
   }
 
-  console.log("allBooks", allBooks);
   return (
     <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">

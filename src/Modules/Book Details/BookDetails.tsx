@@ -141,7 +141,7 @@ const BookDetails = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-3 bg-primary/5 rounded-lg">
                       <div className="text-2xl font-bold text-primary">
-                        {book.copies}
+                        {book.copies + book.totalBorrowedQuantity}
                       </div>
                       <div className="text-sm text-muted-foreground">
                         Total Copies

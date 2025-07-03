@@ -54,7 +54,6 @@ const BorrowCreateModal = () => {
 
   const handleSubmit = async (data: any) => {
     const result = await createBorrow({ fullData: { ...data, book: id } });
-    console.log("result", result, data);
     const isSwalTrue = showToast(result);
     if (isSwalTrue) {
       dispatch(setBorrowModalFalse());

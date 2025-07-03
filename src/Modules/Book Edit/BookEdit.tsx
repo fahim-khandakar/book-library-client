@@ -47,7 +47,6 @@ const BookEdit = () => {
   const dispatch = useDispatch();
   const [editBook, { isLoading }] = useEditBookMutation();
   const { data: singleData } = useGetSingleBookQuery({ id });
-  console.log("id", singleData);
   const form = useForm({
     defaultValues: {
       title: "",

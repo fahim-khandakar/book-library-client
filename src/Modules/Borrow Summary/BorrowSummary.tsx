@@ -1,11 +1,16 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useGetBorrowSummaryQuery } from "@/Redux/features/api/borrow";
+import Loading from "@/Widgets/Loading/Loading";
 import { BookOpen, Hash } from "lucide-react";
 
 const BorrowSummary = () => {
-  const { data: borrowBook } = useGetBorrowSummaryQuery({});
-  console.log("borrow", borrowBook);
+  const { data: borrowBook, isLoading } = useGetBorrowSummaryQuery({});
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className="flex flex-col md:flex-row m-5 gap-5">
       {borrowBook?.data?.map(
